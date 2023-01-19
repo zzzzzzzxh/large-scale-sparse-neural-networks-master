@@ -32,10 +32,10 @@ if __name__ == '__main__':
     # plt.legend(['Mish-grad', 'Swish-grad'])
     # plt.figure(1)
 
-    Lrelu_res = read_dic('slope_result/madalon_Lrelu_0.9_500epoch_epsilon10.txt')
-    relu_res = read_dic('slope_result/madalon_relu_500epoch_epsilon10.txt')
-    allrelu_res = read_dic('slope_result/madalon_allrelu_0.9_500epoch_epsilon10.txt')
-    grelu_res = read_dic('slope_result/madalon_grelu_0.9_500epoch_epsilon10.txt')
+    Lrelu_res = read_dic('dense_results/madalon_lrelu_0.1_500epoch_dense.txt')
+    relu_res = read_dic('dense_results/madalon_relu_0.1_500epoch_dense.txt')
+    allrelu_res = read_dic('dense_results/madalon_allrelu_0.1_500epoch_dense.txt')
+    grelu_res = read_dic('dense_results/madalon_grelu_0.1_500epoch_dense.txt')
 
 
 

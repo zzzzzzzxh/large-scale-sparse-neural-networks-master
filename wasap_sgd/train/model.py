@@ -94,6 +94,8 @@ def create_sparse_weights(epsilon, n_rows, n_cols, weight_init):
     mask_weights = np.random.rand(n_rows, n_cols)
     prob = 1 - (epsilon * (n_rows + n_cols)) / (n_rows * n_cols)  # normal to have 8x connections
 
+    prob =max(0,prob)
+
     # generate an Erdos Renyi sparse weights mask
     weights = lil_matrix((n_rows, n_cols))
     n_params = np.count_nonzero(mask_weights[mask_weights >= prob])

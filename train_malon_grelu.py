@@ -78,7 +78,7 @@ if __name__ == '__main__':
     elif args.dataset == 'madalon':
         # Model architecture madalon
         dimensions = (500, 400, 100, 400, 2)
-        weight_init = 'normal'
+        weight_init = 'xavier'
         # loss = 'mse'
         loss = 'cross_entropy'
         activations = (AlternatedLeftReLU(-0.5), AlternatedLeftReLU(0.5), AlternatedLeftReLU(-0.5), Softmax)

@@ -32,10 +32,45 @@ if __name__ == '__main__':
     # plt.legend(['Mish-grad', 'Swish-grad'])
     # plt.figure(1)
 
+
     Lrelu_res = read_dic('result/FasionMNIST_Lrelu_0.6_500epoch_epsilon20.txt')
     relu_res = read_dic('result/FasionMNIST_relu_500epoch_epsilon20.txt')
     allrelu_res = read_dic('result/FasionMNIST_allrelu_0.6_500epoch_epsilon20.txt')
     grelu_res = read_dic('result/FasionMNIST_grelu_0.6_500epoch_epsilon20_new.txt')
+
+    lrelu_arr = [max(read_dic('result/madalon_Lrelu_0.5_500epoch_epsilon10.txt')['acc']),
+                 max(read_dic('result/madalon_Lrelu_0.5_500epoch_epsilon10_2.txt')['acc']),
+                 max(read_dic('result/madalon_Lrelu_0.5_500epoch_epsilon10_3.txt')['acc'])]
+    lrelu_arr_mean = np.mean(lrelu_arr)*100
+    lrelu_arr_std = np.std(lrelu_arr)*100
+
+    relu_arr = [max(read_dic('result/madalon_relu_500epoch_epsilon10.txt')['acc']),
+                 max(read_dic('result/madalon_relu_500epoch_epsilon10_2.txt')['acc']),
+                 max(read_dic('result/madalon_relu_500epoch_epsilon10_3.txt')['acc'])]
+    relu_arr_mean = np.mean(relu_arr)*100
+    relu_arr_std = np.std(relu_arr)*100
+
+    allrelu_arr = [max(read_dic('result/madalon_allrelu_0.5_500epoch_epsilon10.txt')['acc']),
+                   max(read_dic('result/madalon_allrelu_0.5_500epoch_epsilon10_2.txt')['acc']),
+                   max(read_dic('result/madalon_allrelu_0.5_500epoch_epsilon10_3.txt')['acc'])]
+    allrelu_arr_mean = np.mean(allrelu_arr)*100
+    allrelu_arr_std = np.std(allrelu_arr)*100
+
+    grelu_arr = [max(read_dic('result/madalon_grelu_0.5_500epoch_epsilon10.txt')['acc']),
+                 max(read_dic('result/madalon_grelu_0.5_500epoch_epsilon10_2.txt')['acc']),
+                 max(read_dic('result/madalon_grelu_0.5_500epoch_epsilon10_3.txt')['acc'])]
+    grelu_arr_mean = np.mean(grelu_arr)*100
+    grelu_arr_std = np.std(grelu_arr)*100
+
+    print("%.2f" % grelu_arr_mean,"%.2f" % grelu_arr_std)
+    print("%.2f" % allrelu_arr_mean,"%.2f" % allrelu_arr_std)
+    print("%.2f" % relu_arr_mean,"%.2f" % relu_arr_std)
+    print("%.2f" % lrelu_arr_mean,"%.2f" % lrelu_arr_std)
+
+
+
+
+
 
 
 

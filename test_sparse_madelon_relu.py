@@ -47,7 +47,7 @@ if __name__ == '__main__':
     parser.add_argument('--momentum', type=float, default=0.9, help='SGD momentum (default: 0.9)')
     parser.add_argument('--dropout-rate', type=float, default=0.3, help='Dropout rate (default: 0.3)')
     parser.add_argument('--weight-decay', type=float, default=0.0, help='Weight decay (l2 regularization)')
-    parser.add_argument('--epsilon', type=int, default=40, help='Sparsity level (default: 20)')
+    parser.add_argument('--epsilon', type=int, default=10000, help='Sparsity level (default: 20)')
     parser.add_argument('--zeta', type=float, default=0.3,
                         help='It gives the percentage of unimportant connections which are removed and replaced with '
                              'random ones after every epoch(in [0..1])')
@@ -203,9 +203,9 @@ if __name__ == '__main__':
         # results['kappa'].append(kappa)
         results['EGF'].append(EGF)
         results['overfitting'].append(overfitting)
-        if (epoch < n_epochs - 1):  # do not change connectivity pattern after the last epoch
-            model.weight_evolution(epoch)
-
+        # if (epoch < n_epochs - 1):  # do not change connectivity pattern after the last epoch
+        #     model.weight_evolution(epoch)
+    save_dic('dense_results/madalon_relu_0.1_500epoch_dense_3.txt', results)
     #保存结果
     save_dic('sparse_level_result/madalon_relu_500epoch_epsilon40_3.txt', results)
 
